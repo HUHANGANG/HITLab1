@@ -1,5 +1,6 @@
+package service;
 import java.util.*;
-
+import model.Graph;
 public class ShortestPathFinder {
     public static String calcShortestPath(Graph graph, String word1, String word2) {
         if (!graph.containsNode(word1) || !graph.containsNode(word2)) {
@@ -52,7 +53,7 @@ public class ShortestPathFinder {
         for (String word : path) {
             sj.add(word);
         }
-        return "최단 경로: " + sj.toString() + "\n총 가중치: " + distance.get(word2);
+        return "Shortest path: " + sj.toString() + "\nTotal weight: " + distance.get(word2);
     }
 
     private static class Node {

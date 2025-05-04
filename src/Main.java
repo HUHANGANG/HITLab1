@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import model.Graph;
+import service.*;
 
 public class Main {
     private static Graph graph;
@@ -7,25 +9,25 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         // 1. 텍스트 파일 경로 입력
-        System.out.println("텍스트 파일 경로를 입력하세요:");
+        System.out.println("Enter the path of the text file:");
         String filePath = scanner.nextLine();
 
         // 2. 그래프 생성
         graph = GraphBuilder.buildGraph(filePath);
-        System.out.println("그래프 생성 완료!");
+        System.out.println("Graph creation completed!");
 
         while (true) {
             // 3. 메뉴 출력
-            System.out.println("\n메뉴 선택:");
-            System.out.println("1. 유향 그래프 보기");
-            System.out.println("2. Bridge Words 조회");
-            System.out.println("3. Bridge Word 기반 새 텍스트 생성");
-            System.out.println("4. 두 단어 간 최단 경로 계산");
-            System.out.println("5. 단어의 PageRank 계산");
-            System.out.println("6. 랜덤 워크 실행");
-            System.out.println("0. 종료");
+            System.out.println("\nSelect a menu option:");
+            System.out.println("1. View directed graph");
+            System.out.println("2. Query bridge words");
+            System.out.println("3. Generate new text based on bridge words");
+            System.out.println("4. Calculate shortest path between two words");
+            System.out.println("5. Calculate PageRank of a word");
+            System.out.println("6. Perform random walk");
+            System.out.println("0. Exit");
 
-            System.out.print("입력: ");
+            System.out.print("input: ");
             int choice = -1;
             try {
                 choice = Integer.parseInt(scanner.nextLine());
@@ -36,39 +38,39 @@ public class Main {
                     showDirectedGraph(graph);
                     break;
                 case 2:
-                    System.out.print("첫 번째 단어 입력: ");
+                    System.out.print("input first word: ");
                     String word1 = scanner.nextLine().toLowerCase();
-                    System.out.print("두 번째 단어 입력: ");
+                    System.out.print("input second word: ");
                     String word2 = scanner.nextLine().toLowerCase();
                     System.out.println(queryBridgeWords(word1, word2));
                     break;
                 case 3:
-                    System.out.println("새로운 텍스트를 입력하세요:");
+                    System.out.println("Enter a new text:");
                     String inputText = scanner.nextLine();
                     System.out.println(generateNewText(inputText));
                     break;
                 case 4:
-                    System.out.print("출발 단어 입력: ");
+                    System.out.print("Enter the start word: ");
                     String from = scanner.nextLine().toLowerCase();
-                    System.out.print("도착 단어 입력: ");
+                    System.out.print("Enter the end word: ");
                     String to = scanner.nextLine().toLowerCase();
                     System.out.println(calcShortestPath(from, to));
                     break;
                 case 5:
-                    System.out.print("PageRank를 계산할 단어 입력: ");
+                    System.out.print("Enter the word to calculate PageRank: ");
                     String word = scanner.nextLine().toLowerCase();
-                    System.out.printf("%s의 PageRank: %.5f\n", word, calPageRank(word));
+                    System.out.printf("PageRank of %s: %.5f\n", word, calPageRank(word));
                     break;
                 case 6:
-                    System.out.println("랜덤 워크 결과:");
+                    System.out.println("Random walk result:");
                     System.out.println(randomWalk());
                     break;
                 case 0:
-                    System.out.println("프로그램을 종료합니다.");
+                    System.out.println("Exiting the program.");
                     scanner.close();
                     return;
                 default:
-                    System.out.println("잘못된 입력입니다. 다시 시도하세요.");
+                    System.out.println("Invalid input. Please try again.");
             }
         }
     }

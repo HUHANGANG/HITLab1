@@ -1,5 +1,6 @@
+package service;
 import java.util.*;
-
+import model.Graph;
 public class PageRankCalculator {
     private static final double DAMPING_FACTOR = 0.85; // d 값은 0.85로 고정
     private static final int ITERATIONS = 100;         // 반복 횟수
@@ -7,7 +8,7 @@ public class PageRankCalculator {
 
     public static Double calPageRank(Graph graph, String word) {
         if (!graph.containsNode(word)) {
-            System.out.println("단어 \"" + word + "\"가 그래프에 없습니다!");
+            System.out.println("The word \"" + word + "\"is not in the graph!");
             return 0.0;
         }
 

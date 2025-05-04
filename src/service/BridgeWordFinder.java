@@ -1,4 +1,6 @@
+package service;
 import java.util.*;
+import model.Graph;
 
 public class BridgeWordFinder {
     public static String queryBridgeWords(Graph graph, String word1, String word2) {

@@ -1,5 +1,6 @@
+package service;
 import java.util.*;
-
+import model.Graph;
 public class RandomWalker {
     public static String randomWalk(Graph graph) {
         Set<String> visitedEdges = new HashSet<>();
