@@ -2,9 +2,9 @@ package service;
 import java.util.*;
 import model.Graph;
 public class PageRankCalculator {
-    private static final double DAMPING_FACTOR = 0.85; // d 값은 0.85로 고정
-    private static final int ITERATIONS = 100;         // 반복 횟수
-    private static final double EPSILON = 1e-6;        // 수렴 조건
+    private static final double DAMPING_FACTOR = 0.85; // d(const) = 0.85
+    private static final int ITERATIONS = 100;
+    private static final double EPSILON = 1e-6;
 
     public static Double calPageRank(Graph graph, String word) {
         if (!graph.containsNode(word)) {
@@ -16,12 +16,12 @@ public class PageRankCalculator {
         int n = nodes.size();
         Map<String, Double> pr = new HashMap<>();
 
-        // 초기 PR 값 설정
+        // PR
         for (String node : nodes) {
             pr.put(node, 1.0 / n);
         }
 
-        // Dead-end(출력이 없는 노드)도 처리해야 함
+        // Dead-end
         for (int iter = 0; iter < ITERATIONS; iter++) {
             Map<String, Double> newPr = new HashMap<>();
             double danglingSum = 0.0;
@@ -44,7 +44,6 @@ public class PageRankCalculator {
                 newPr.put(node, rank);
             }
 
-            // 수렴 확인
             double diff = 0.0;
             for (String node : nodes) {
                 diff += Math.abs(newPr.get(node) - pr.get(node));

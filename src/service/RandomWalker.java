@@ -10,7 +10,6 @@ public class RandomWalker {
         List<String> nodes = new ArrayList<>(graph.getNodes());
         if (nodes.isEmpty()) return "";
 
-        // 1. 랜덤한 시작 노드 선택
         String current = nodes.get(random.nextInt(nodes.size()));
         path.add(current);
 
@@ -23,7 +22,7 @@ public class RandomWalker {
 
             String edge = current + "->" + next;
             if (visitedEdges.contains(edge)) {
-                break; // 이미 방문한 간선이면 멈춤
+                break;
             }
 
             visitedEdges.add(edge);
@@ -31,7 +30,6 @@ public class RandomWalker {
             current = next;
         }
 
-        // 결과 반환 (노드들을 공백으로 연결)
         return String.join(" ", path);
     }
 }

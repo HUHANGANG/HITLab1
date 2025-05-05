@@ -8,16 +8,14 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // 1. 텍스트 파일 경로 입력
         System.out.println("Enter the path of the text file:");
         String filePath = scanner.nextLine();
 
-        // 2. 그래프 생성
         graph = GraphBuilder.buildGraph(filePath);
         System.out.println("Graph creation completed!");
 
         while (true) {
-            // 3. 메뉴 출력
+
             System.out.println("\nSelect a menu option:");
             System.out.println("1. View directed graph");
             System.out.println("2. Query bridge words");

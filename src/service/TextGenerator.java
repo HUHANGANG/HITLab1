@@ -3,7 +3,7 @@ import java.util.*;
 import model.Graph;
 public class TextGenerator {
     public static String generateNewText(Graph graph, String inputText) {
-        // 입력 텍스트 전처리
+
         inputText = inputText.toLowerCase();
         inputText = inputText.replaceAll("[^a-z\\s]", " ");
         inputText = inputText.replaceAll("\\s+", " ").trim();

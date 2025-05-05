@@ -8,8 +8,7 @@ public class ShortestPathFinder {
                     (graph.containsNode(word2) ? "" : "\"" + word2 + "\" ") +
                     "in the graph!";
         }
-
-        // Dijkstra 알고리즘 사용
+        
         Map<String, Integer> distance = new HashMap<>();
         Map<String, String> previous = new HashMap<>();
         PriorityQueue<Node> queue = new PriorityQueue<>(Comparator.comparingInt(n -> n.distance));
@@ -41,7 +40,6 @@ public class ShortestPathFinder {
             return "No path from \"" + word1 + "\" to \"" + word2 + "\"!";
         }
 
-        // 경로 복원
         LinkedList<String> path = new LinkedList<>();
         String current = word2;
         while (current != null) {
