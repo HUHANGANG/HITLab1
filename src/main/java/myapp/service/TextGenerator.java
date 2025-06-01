@@ -1,6 +1,6 @@
-package service;
+package main.java.myapp.service;
 import java.util.*;
-import model.Graph;
+import main.java.myapp.model.Graph;
 public class TextGenerator {
     public static String generateNewText(Graph graph, String inputText) {
 

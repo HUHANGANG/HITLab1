@@ -1,6 +1,11 @@
-package service;
-import java.util.*;
-import model.Graph;
+package main.java.myapp.service;
+
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.StringJoiner;
+
+import main.java.myapp.model.Graph;
 
 public class BridgeWordFinder {
     public static String queryBridgeWords(Graph graph, String word1, String word2) {

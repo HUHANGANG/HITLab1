@@ -1,6 +1,6 @@
-package service;
+package main.java.myapp.service;
 import java.util.*;
-import model.Graph;
+import main.java.myapp.model.Graph;
 public class PageRankCalculator {
     private static final double DAMPING_FACTOR = 0.85; // d(const) = 0.85
     private static final int ITERATIONS = 100;

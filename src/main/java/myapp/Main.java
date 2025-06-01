@@ -1,6 +1,9 @@
+package main.java.myapp;
+
 import java.util.Scanner;
-import model.Graph;
-import service.*;
+
+import main.java.myapp.service.*;
+import main.java.myapp.model.Graph;
 
 public class Main {
     private static Graph graph;

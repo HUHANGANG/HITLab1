@@ -1,10 +1,10 @@
-package service;
+package main.java.myapp.service;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
-import model.Graph;
+import main.java.myapp.model.Graph;
 public class GraphBuilder {
     public static Graph buildGraph(String filePath) {
         Graph graph = new Graph();

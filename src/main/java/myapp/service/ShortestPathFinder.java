@@ -1,6 +1,6 @@
-package service;
+package main.java.myapp.service;
 import java.util.*;
-import model.Graph;
+import main.java.myapp.model.Graph;
 public class ShortestPathFinder {
     public static String calcShortestPath(Graph graph, String word1, String word2) {
         if (!graph.containsNode(word1) || !graph.containsNode(word2)) {
